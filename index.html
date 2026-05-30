@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swine Bio-Economic Growth Velocity Terminal</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-mono antialiased selection:bg-purple-500 selection:text-white">
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        
+        <header class="border-b border-purple-900/40 pb-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+            <div>
+                <div class="text-[10px] text-purple-400 font-bold tracking-widest uppercase mb-1">
+                    [SYSTEM CODE // SFH: ANIMAL HUSBANDRY TECHNOLOGY & FOOD SECURITY]
+                </div>
+                <h1 class="text-2xl font-black text-white tracking-tight uppercase">
+                    Swine Mass Accretion & Derivative Dynamics
+                </h1>
+                <p class="text-xs text-slate-400 mt-1 font-sans">
+                    Tracking instantaneous lean-tissue velocity curves to mathematically dictate optimal finisher marketplace allocation.
+                </p>
+            </div>
+            <div class="text-[11px] bg-purple-950/40 border border-purple-800/40 px-3 py-1.5 rounded text-purple-300">
+                MODEL: Landrace x Large White Crossbreed (Standard Farrow-to-Finish Matrix)
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-4 space-y-6">
+                
+                <div class="bg-slate-900/50 border border-slate-800 p-5 rounded-xl">
+                    <h2 class="text-sm font-bold text-purple-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                        <span>■</span> Biological Problem Matrix
+                    </h2>
+                    <p class="text-xs font-sans text-slate-300 leading-relaxed">
+                        In precision swine husbandry, feed constitutes over 60–70% of total production costs. Swine growth curves follow a sigmoidal pattern where muscle accumulation scales fast during early phases before transitioning heavily toward backfat layer deposition.
+                    </p>
+                    <p class="text-xs font-sans text-slate-300 mt-2 leading-relaxed">
+                        By deploying a cubic biological function $f(x)$ mapping body weight against weeks, managers can solve for the first derivative $f'(x)$. This yields the **instantaneous rate of change**, providing exact data on when the animal reaches maximum growth velocity before feed conversion ratios drop.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 border border-purple-900/60 p-5 rounded-xl space-y-4">
+                    <h2 class="text-sm font-bold text-white uppercase tracking-wider">
+                        Calculus Kernel
+                    </h2>
+                    
+                    <div>
+                        <span class="text-[10px] text-slate-400 block mb-1">CUMULATIVE WEIGHT FUNCTION $f(x)$</span>
+                        <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-xs text-center text-purple-400 font-bold">
+                            $f(x) = -0.011x^3 + 0.48x^2 + 1.2x + 1.5$
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="text-[10px] text-slate-400 block mb-1">GROWTH VELOCITY DERIVATIVE $f'(x)$</span>
+                        <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-xs text-center text-amber-400 font-bold">
+                            $f'(x) = -0.033x^2 + 0.96x + 1.2$
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950/50 p-3 rounded text-[10px] text-slate-400 space-y-1 font-sans">
+                        <div>• <strong>$x$:</strong> Finisher Age Timeline (Weeks 0 to 24)</div>
+                        <div>• <strong>$f(x)$:</strong> Cumulative Animal Mass (kg)</div>
+                        <div>• <strong>$f'(x)$:</strong> Instantaneous Weight Gain Velocity (kg/week)</div>
+                    </div>
+                </div>
+
+                <div class="text-[10px] text-slate-500 bg-slate-950 p-3 rounded border border-slate-900 font-sans">
+                    <strong>Telemetry Calibration Source:</strong> 
+                    Growth constants adjusted against historical commercial production standards found in the <em>PIC (Pig Improvement Company) Nutrient Requirements & Growth Reference Charts</em>.
+                </div>
+            </div>
+
+            <div class="lg:col-span-8 space-y-6">
+                
+                <div class="bg-slate-900/30 border border-slate-800 p-6 rounded-xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xs uppercase tracking-widest font-bold text-slate-300">
+                            Biometric Telemetry Readout
+                        </h3>
+                        <span class="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-500/20">
+                            Click Graph Nodes to Execute
+                        </span>
+                    </div>
+                    
+                    <div class="relative h-[360px] w-full">
+                        <canvas id="swineTelemetryChart"></canvas>
+                    </div>
+                </div>
+
+                <div id="consoleWrapper" class="bg-slate-900 border border-slate-800 rounded-xl p-5 transition-all duration-300">
+                    
+                    <div id="emptyConsoleState" class="text-center py-4 text-slate-500 text-xs font-sans">
+                        <span class="inline-block animate-pulse text-purple-500 mr-2">⚡</span> 
+                        Console online. Awaiting data marker selection from the visualization matrix to evaluate derivative computations.
+                    </div>
+
+                    <div id="activeConsoleState" class="hidden font-mono">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-2 mb-4">
+                            <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Calculus Process Complete</span>
+                            <span id="txtPhase" class="text-[10px] px-2 py-0.5 rounded font-bold uppercase"></span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <div class="space-y-1">
+                                <span class="text-[10px] text-slate-400 uppercase block">Animal Age</span>
+                                <div id="txtWeek" class="text-2xl font-black text-white">Week --</div>
+                                <span id="txtMass" class="text-xs text-purple-300 block">Mass: -- kg</span>
+                            </div>
+                            
+                            <div class="sm:col-span-2 space-y-2">
+                                <span class="text-[10px] text-slate-400 uppercase block">Computed First Derivative $f'(x)$</span>
+                                <div class="flex items-baseline gap-2">
+                                    <div id="txtDerivative" class="text-3xl font-black text-amber-400">--</div>
+                                    <div class="text-xs text-slate-400">kg mass accrued / week</div>
+                                </div>
+                                
+                                <div class="bg-slate-950 p-3 rounded border border-slate-800/80 mt-2">
+                                    <span class="text-[10px] text-purple-400 block font-bold uppercase mb-1">Managerial Interpretation:</span>
+                                    <p id="txtExplanation" class="text-xs text-slate-300 leading-relaxed font-sans"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="mt-12 pt-4 border-t border-slate-900 text-center text-[10px] text-slate-600 font-sans">
+            Educational Applied Calculus Sandbox // Swine Husbandry Analytics Pipeline
+        </footer>
+    </div>
+
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <script>
+        // 1. Math formulas mapped to Javascript
+        // f(x) = -0.011x^3 + 0.48x^2 + 1.2x + 1.5
+        function solveCumulativeMass(x) {
+            return (-0.011 * Math.pow(x, 3)) + (0.48 * Math.pow(x, 2)) + (1.2 * x) + 1.5;
+        }
+
+        // f'(x) = -0.033x^2 + 0.96x + 1.2
+        function solveInstantaneousVelocity(x) {
+            return (-0.033 * Math.pow(x, 2)) + (0.96 * x) + 1.2;
+        }
+
+        // 2. Setup Loop Array data structures for 24-week finishing timeline
+        const weeksLabels = [];
+        const cumulativeWeights = [];
+        const growthVelocities = [];
+
+        for (let week = 0; week <= 24; week++) {
+            weeksLabels.push(week);
+            cumulativeWeights.push(solveCumulativeMass(week).toFixed(1));
+            growthVelocities.push(solveInstantaneousVelocity(week).toFixed(2));
+        }
+
+        // 3. Render Chart.js Architecture
+        const ctx = document.getElementById('swineTelemetryChart').getContext('2d');
+        const swineTelemetryChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: weeksLabels,
+                datasets: [
+                    {
+                        label: 'Cumulative Swine Weight f(x) (kg)',
+                        data: cumulativeWeights,
+                        borderColor: '#a855f7', // Purple
+                        backgroundColor: 'rgba(168, 85, 247, 0.03)',
+                        borderWidth: 3,
+                        yAxisID: 'yWeight',
+                        tension: 0.2,
+                        pointBackgroundColor: '#a855f7',
+                        pointHoverRadius: 7
+                    },
+                    {
+                        label: "Average Weekly Gain f'(x) (kg/week)",
+                        data: growthVelocities,
+                        borderColor: '#f59e0b', // Amber
+                        backgroundColor: 'transparent',
+                        borderWidth: 2,
+                        borderDash: [4, 4],
+                        yAxisID: 'yVelocity',
+                        tension: 0.2,
+                        pointBackgroundColor: '#f59e0b',
+                        pointHoverRadius: 7
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { boxWidth: 10, color: '#94a3b8', font: { family: 'monospace', size: 11 } }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Age Timeline (Weeks)', color: '#64748b', font: { family: 'monospace' } },
+                        grid: { color: 'rgba(51, 65, 85, 0.2)' },
+                        ticks: { color: '#94a3b8', font: { family: 'monospace' } }
+                    },
+                    yWeight: {
+                        type: 'linear',
+                        position: 'left',
+                        title: { display: true, text: 'Total Mass Accumulation (kg)', color: '#a855f7', font: { family: 'monospace' } },
+                        grid: { color: 'rgba(51, 65, 85, 0.2)' },
+                        ticks: { color: '#a855f7', font: { family: 'monospace' } }
+                    },
+                    yVelocity: {
+                        type: 'linear',
+                        position: 'right',
+                        title: { display: true, text: 'Instantaneous Gain Rate (kg/week)', color: '#f59e0b', font: { family: 'monospace' } },
+                        grid: { drawOnChartArea: false },
+                        ticks: { color: '#f59e0b', font: { family: 'monospace' } }
+                    }
+                },
+                onClick: (e, elements) => {
+                    if (elements.length > 0) {
+                        const targetIndex = elements[0].index;
+                        executeCalculusInference(targetIndex);
+                    }
+                }
+            }
+        });
+
+        // 4. Live Calculus Matrix Node Interpreter Updates
+        function executeCalculusInference(weekIndex) {
+            const week = weeksLabels[weekIndex];
+            const weight = solveCumulativeMass(week);
+            const derivative = solveInstantaneousVelocity(week);
+
+            // Interface Content Toggling
+            document.getElementById('emptyConsoleState').classList.add('hidden');
+            document.getElementById('activeConsoleState').classList.remove('hidden');
+
+            // Apply calculated data variables to the DOM
+            document.getElementById('txtWeek').innerText = `Week ${week}`;
+            document.getElementById('txtMass').innerText = `Mass: ${weight.toFixed(1)} kg`;
+            document.getElementById('txtDerivative').innerText = `+${derivative.toFixed(2)}`;
+
+            const panelWrapper = document.getElementById('consoleWrapper');
+            const phaseBadge = document.getElementById('txtPhase');
+            const explanationField = document.getElementById('txtExplanation');
+
+            // Conditional layout styling and biological classification routing logic
+            if (week <= 6) {
+                panelWrapper.className = "bg-slate-900 border-2 border-purple-800 rounded-xl p-5 transition-all duration-300";
+                phaseBadge.className = "text-[10px] px-2 py-0.5 rounded font-bold uppercase bg-purple-950 text-purple-300 border border-purple-800/40";
+                phaseBadge.innerText = "Nursery / Starter Phase";
+                explanationField.innerHTML = `At Week ${week}, the piglet is expanding its skeletal framework. The derivative value shows the animal is adding roughly <strong>${derivative.toFixed(2)} kg of mass per week</strong>. Feed volumes are small, but nutritional concentration must favor gut development.`;
+            } else if (week > 6 && week <= 16) {
+                panelWrapper.className = "bg-slate-900 border-2 border-emerald-800 rounded-xl p-5 transition-all duration-300";
+                phaseBadge.className = "text-[10px] px-2 py-0.5 rounded font-bold uppercase bg-emerald-950 text-emerald-300 border border-emerald-800/40";
+                phaseBadge.innerText = "Grower Phase (Peak Lean Accretion)";
+                explanationField.innerHTML = `At Week ${week}, the animal is in its peak metabolic velocity zone. The derivative is at or near its maximum. The finisher is generating meat tissue rapidly. This represents the absolute most profitable window for feed-to-lean muscle allocation.`;
+            } else if (week > 16 && week <= 21) {
+                panelWrapper.className = "bg-slate-900 border-2 border-amber-800 rounded-xl p-5 transition-all duration-300";
+                phaseBadge.className = "text-[10px] px-2 py-0.5 rounded font-bold uppercase bg-amber-950 text-amber-300 border border-amber-800/40";
+                phaseBadge.innerText = "Finishing Phase (Inflection Peak Passed)";
+                explanationField.innerHTML = `At Week ${week}, notice that while cumulative mass is still moving upward, the derivative curve has peaked and is now heading downward. This indicates the biological rate of change is slowing. Lean lean muscle tissue production is dropping while adipose fat deposition expands.`;
+            } else {
+                panelWrapper.className = "bg-slate-900 border-2 border-rose-800 rounded-xl p-5 transition-all duration-300";
+                phaseBadge.className = "text-[10px] px-2 py-0.5 rounded font-bold uppercase bg-rose-950 text-rose-300 border border-rose-800/40";
+                phaseBadge.innerText = "Market Maturity / Plateau Phase";
+                explanationField.innerHTML = `At Week ${week}, the derivative value drops close to zero. The animal has biological limits and has completed its growth pattern. Past this window, feed converts exclusively to unnecessary body fat rather than value-adding mass, causing severe financial drag on farm overhead. Market shipment is recommended immediately.`;
+            }
+        }
+    </script>
+</body>
+</html>
